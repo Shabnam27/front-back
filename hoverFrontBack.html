@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="flip-card">
+        <div class="flip-card-inner">
+            <div class="flip-card-front">
+                <p class="title">FRONT</p>
+                <p>Hover Me</p>
+            </div>
+            <div class="flip-card-back">
+                <p class="title">BACK</p>
+                <p>Leave Me</p>
+            </div>
+        </div>
+    </div>
+
+<style>
+    * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	flex-direction: column; /*flex-direction устанавливает направление конейнера
+	 column: идёт слева направо.
+	*/
+	background: #111;
+}
+.flip-card {
+	background-color: transparent;
+	width: 200px;
+	height: 340px;
+	perspective: 1000px;
+	font-family: sans-serif;
+}
+
+.title {
+	font-size: 3em;
+	font-weight: 900;
+	text-align: center;
+	margin: 0;
+}
+
+.flip-card-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.8s;
+	transform-style: preserve-3d; /*позволяет использовать трехмерное пространство,*/
+}
+
+.flip-card:hover .flip-card-inner {
+	transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	border: 5px solid #8be9fd;
+	border-radius: 1rem;
+}
+
+.flip-card-front {
+	background: #282a36;
+	color: #8be9fd;
+}
+
+.flip-card-back {
+	background: #282a36;
+	color: #8be9fd;
+	transform: rotateY(180deg);
+}
+
+@media (max-width: 250px){
+
+}
+
+
+</style>
+
+</body>
+</html>
